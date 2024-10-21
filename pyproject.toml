@@ -14,12 +14,12 @@ keywords = [
   "Deep Learning",
   "Machine Learning",
 ]
-license = {file = "LICENSE"}
+license = { file = "LICENSE" }
 maintainers = [
-    {name = "Zhiyuan Chen", email = "this@zyc.ai"},
+  { name = "Zhiyuan Chen", email = "this@zyc.ai" },
 ]
 authors = [
-    {name = "Zhiyuan Chen", email = "this@zyc.ai"},
+  { name = "Zhiyuan Chen", email = "this@zyc.ai" },
 ]
 requires-python = ">=3"
 classifiers = [
@@ -29,11 +29,11 @@ classifiers = [
   "Intended Audience :: Science/Research",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.7",
-  "Programming Language :: Python :: 3.8",
   "Programming Language :: Python :: 3.9",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dynamic = [
@@ -43,25 +43,23 @@ dependencies = [
   "chanfig>=0.0.69",
   "danling>=0.2",
 ]
-[project.optional-dependencies]
-jax = [
+optional-dependencies.jax = [
   "flax",
   "jax",
 ]
-tensorflow = [
+optional-dependencies.tensorflow = [
   "tensorflow",
 ]
-torch = [
+optional-dependencies.torch = [
   "accelerate",
   "torch",
 ]
-[project.urls]
-documentation = "https://clibming.danling.org"
-homepage = "https://climbing.danling.org"
-repository = "https://github.com/ZhiyuanChen/climbing"
+urls.documentation = "https://clibming.danling.org"
+urls.homepage = "https://climbing.danling.org"
+urls.repository = "https://github.com/ZhiyuanChen/climbing"
 
 [tool.setuptools]
-packages = ["climbing"]
+packages = [ "climbing" ]
 
 [tool.setuptools_scm]
 write_to = "climbing/_version.py"
@@ -75,29 +73,6 @@ profile = "black"
 
 [tool.flake8]
 max-line-length = 120
-
-[tool.pytest.ini_options]
-addopts = "--doctest-modules --cov"
-
-[tool.coverage.run]
-branch = true
-omit = ["tests/*", "setup.py"]
-
-[tool.coverage.paths]
-source = ["icrawler"]
-
-[tool.coverage.xml]
-output = "coverage.xml"
-
-[tool.coverage.json]
-output = "coverage.json"
-
-[tool.coverage.report]
-show_missing = true
-# fail_under = 80
-
-[tool.mypy]
-ignore_missing_imports = true
 
 [tool.pylint.format]
 max-line-length = 120
@@ -115,3 +90,26 @@ output-format = "colorized"
 
 [tool.pylint.main]
 fail-under = 9.8
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --cov"
+
+[tool.coverage.run]
+branch = true
+omit = [ "tests/*", "setup.py" ]
+
+[tool.coverage.paths]
+source = [ "icrawler" ]
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.coverage.json]
+output = "coverage.json"
+
+[tool.coverage.report]
+show_missing = true
+# fail_under = 80
+
+[tool.mypy]
+ignore_missing_imports = true
